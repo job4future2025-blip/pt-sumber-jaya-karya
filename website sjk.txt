@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PT. Sumber Jaya Karya - Solusi terpercaya untuk Mekanikal, Elektrikal, dan Perdagangan Umum.">
+    <title>PT. Sumber Jaya Karya | Mechanical, Electrical & General Trading</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- CSS VARIABLES & RESET --- */
+        :root {
+            /* Warna berdasarkan logo: Merah Petir dan Hitam */
+            --primary-color: #D32F2F; /* Merah */
+            --primary-dark: #B71C1C;
+            --secondary-color: #1F2937; /* Hitam Kebiruan/Abu Gelap */
+            --text-color: #374151;
+            --light-bg: #F3F4F6;
+            --white: #FFFFFF;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* --- UTILITY CLASSES --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            color: #6B7280;
+            max-width: 600px;
+            margin: 0 auto 50px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(211, 47, 47, 0.3);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--white);
+            color: var(--white);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--primary-color);
+        }
+
+        /* --- HEADER & NAVBAR --- */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo img {
+            height: 50px; /* Sesuaikan tinggi logo agar proporsional */
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--secondary-color);
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--secondary-color);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            /* GANTI GAMBAR HERO DI SINI (CSS Background) */
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
+                        url('hero.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding-top: 80px; 
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-content h1 span {
+            color: var(--primary-color);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        /* --- ABOUT SECTION --- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-img {
+            position: relative;
+        }
+
+        .about-img img {
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .about-text h2 {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* --- SERVICES SECTION --- */
+        .services {
+            background-color: var(--light-bg);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            border-bottom: 4px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-bottom-color: var(--primary-color);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+
+        .service-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .service-list {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+        
+        .service-list li {
+            list-style-type: disc;
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        /* --- PROJECTS/PORTFOLIO SECTION --- */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            height: 250px;
+            cursor: pointer;
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .project-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(transparent, rgba(0,0,0,0.9));
+            padding: 20px;
+            color: var(--white);
+            transform: translateY(100px);
+            transition: var(--transition);
+        }
+
+        .project-card:hover .project-overlay {
+            transform: translateY(0);
+        }
+
+        /* --- CONTACT SECTION --- */
+        .contact {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            margin-bottom: 30px;
+            color: #D1D5DB;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .info-item i {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+
+        .contact-form {
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            color: var(--text-color);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #E5E7EB;
+            border-radius: 4px;
+            font-family: inherit;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.1);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #111827;
+            color: #9CA3AF;
+            padding: 50px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #374151;
+            padding-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* --- RESPONSIVE MEDIA QUERIES --- */
+        @media (max-width: 992px) {
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+            .about-grid, .contact-container {
+                grid-template-columns: 1fr;
+            }
+            .about-img {
+                order: -1; 
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                padding: 20px;
+                gap: 20px;
+                box-shadow: 0 10px 10px rgba(0,0,0,0.05);
+                transform: translateY(-150%);
+                transition: transform 0.3s ease-in-out;
+                z-index: 999;
+                text-align: center;
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+            }
+
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container navbar">
+            <a href="#" class="logo">
+                <!-- PASTIKAN ANDA MEMILIKI FILE "logo.png" DI FOLDER YANG SAMA -->
+                <img src="logo.png" alt="PT. Sumber Jaya Karya Logo">
+            </a>
+            <div class="nav-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#beranda">Beranda</a></li>
+                    <li><a href="#tentang">Tentang Kami</a></li>
+                    <li><a href="#layanan">Layanan</a></li>
+                    <li><a href="#proyek">Proyek</a></li>
+                    <li><a href="#kontak">Kontak</a></li>
+                    <li><a href="#kontak" class="btn btn-primary" style="padding: 8px 20px; color: white;">Hubungi Kami</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="hero">
+        <div class="container hero-content">
+            <h1>Solusi Terpercaya untuk <br><span>Mekanikal & Elektrikal</span></h1>
+            <p>PT. Sumber Jaya Karya hadir sebagai mitra strategis dalam perdagangan umum, penyediaan jasa mekanikal, dan elektrikal dengan standar kualitas tinggi dan keamanan terjamin.</p>
+            <div class="hero-buttons">
+                <a href="#layanan" class="btn btn-primary">Layanan Kami</a>
+                <a href="#tentang" class="btn btn-outline">Tentang Perusahaan</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="tentang" class="section-padding">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-img">
+                    <!-- PASTIKAN ANDA MEMILIKI FILE "about.jpg" -->
+                    <img src="about.jpg" alt="Tim Engineering Profesional">
+                </div>
+                <div class="about-text">
+                    <h2>Tentang PT. Sumber Jaya Karya</h2>
+                    <p>Bergerak di bidang perdagangan umum serta kontraktor mekanikal dan elektrikal, PT. Sumber Jaya Karya berkomitmen untuk memberikan solusi teknik terbaik bagi industri di Indonesia.</p>
+                    <p>Kami mengedepankan integritas, profesionalisme, dan inovasi dalam setiap proyek yang kami kerjakan. Dengan tim ahli yang berpengalaman, kami siap menjembatani kebutuhan infrastruktur dan perdagangan Anda.</p>
+                    
+                    <div class="stats">
+                        <div class="stat-item">
+                            <h3>10+</h3>
+                            <p>Tahun Pengalaman</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>150+</h3>
+                            <p>Proyek Selesai</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>100%</h3>
+                            <p>Kepuasan Klien</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="layanan" class="section-padding services">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Layanan Kami</h2>
+                <p class="section-subtitle">Menyediakan layanan komprehensif mulai dari pengadaan barang hingga pemasangan teknis.</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Service 1: Mechanical -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Mechanical</h3>
+                    <p>Spesialisasi dalam pekerjaan mesin dan perpipaan untuk kebutuhan industri.</p>
+                    <ul class="service-list">
+                        <li>Instalasi Pompa & Compressor</li>
+                        <li>Piping System (Las, Bending, dll)</li>
+                        <li>Maintenance HVAC</li>
+                        <li>Rotating Equipment</li>
+                    </ul>
+                </div>
+
+                <!-- Service 2: Electrical -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Electrical</h3>
+                    <p>Solusi kelistrikan industri yang aman, efisien, dan tahan lama.</p>
+                    <ul class="service-list">
+                        <li>Panel Maker & Instalasi</li>
+                        <li>Instalasi Trafo & Switchgear</li>
+                        <li>System Penangkal Petir</li>
+                        <li>Industrial Wiring</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3: General Trading -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-truck-loading"></i>
+                    </div>
+                    <h3>General Trading</h3>
+                    <p>Pengadaan barang dan material kebutuhan industri dengan cepat dan tepat.</p>
+                    <ul class="service-list">
+                        <li>Supplier Alat Berat</li>
+                        <li>Suku Cadang (Sparepart)</li>
+                        <li>Bahan Baku Industri</li>
+                        <li>Alat Keselamatan Kerja (K3)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects/Portfolio Section -->
+    <section id="proyek" class="section-padding">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Galeri Proyek</h2>
+                <p class="section-subtitle">Beberapa karya kami yang telah selesai dikerjakan dengan standar kualitas tinggi.</p>
+            </div>
+
+            <div class="project-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <img src="project-1.jpg" alt="Proyek Power Plant">
+                    <div class="project-overlay">
+                        <h3>Instalasi Listrik Pabrik</h3>
+                        <p>Cikarang, Jawa Barat</p>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <img src="project-2.jpg" alt="Proyek Piping">
+                    <div class="project-overlay">
+                        <h3>Piping System Refinery</h3>
+                        <p>Balikpapan, Kalimantan</p>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <img src="project-3.jpg" alt="Proyek Pengadaan Barang">
+                    <div class="project-overlay">
+                        <h3>Pengadaan Alat Berat</h3>
+                        <p>Samarinda</p>
+                    </div>
+                </div>
+                <!-- Project 4 -->
+                <div class="project-card">
+                    <img src="project-4.jpg" alt="Panel Maker">
+                    <div class="project-overlay">
+                        <h3>Fabrication Main Panel</h3>
+                        <p>Tangerang, Banten</p>
+                    </div>
+                </div>
+                <!-- Project 5 -->
+                <div class="project-card">
+                    <img src="project-5.jpg" alt="Maintenance">
+                    <div class="project-overlay">
+                        <h3>Annual Maintenance HVAC</h3>
+                        <p>Jakarta Selatan</p>
+                    </div>
+                </div>
+                <!-- Project 6 -->
+                <div class="project-card">
+                    <img src="project-6.jpg" alt="Safety Equipment">
+                    <div class="project-overlay">
+                        <h3>Supply PPE & Tools</h3>
+                        <p>Surabaya, Jawa Timur</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="kontak" class="section-padding contact">
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>Hubungi Kami</h2>
+                    <p>Siap untuk memulai proyek Anda atau membutuhkan penawaran harga? Tim kami siap membantu Anda 24/7.</p>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Alamat Kantor</h4>
+                            <p>Jl. Industri Raya No. 123, Kawasan Industri Pulo Gadung, Jakarta Timur, DKI Jakarta 13920</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@sumberjayakarya.co.id<br>sales@sumberjayakarya.co.id</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <h4>Telepon</h4>
+                            <p>(021) 460-1234<br>+62 812-3456-7890 (WhatsApp)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form id="contactForm" onsubmit="handleFormSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Nama Lengkap</label>
+                            <input type="text" id="name" class="form-control" placeholder="Masukkan nama Anda" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Perusahaan</label>
+                            <input type="email" id="email" class="form-control" placeholder="nama@perusahaan.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subjek</label>
+                            <select id="subject" class="form-control">
+                                <option value="penawaran">Permintaan Penawaran</option>
+                                <option value="kerjasama">Kerjasama Bisnis</option>
+                                <option value="lainnya">Lainnya</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Pesan</label>
+                            <textarea id="message" rows="4" class="form-control" placeholder="Tuliskan kebutuhan Anda..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Kirim Pesan</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>PT. Sumber Jaya Karya</h4>
+                    <p style="font-size: 0.9rem;">Mitra terpercaya Anda dalam solusi mekanikal, elektrikal, dan perdagangan umum yang mengutamakan kualitas dan keamanan.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Tautan Cepat</h4>
+                    <ul>
+                        <li><a href="#beranda">Beranda</a></li>
+                        <li><a href="#tentang">Tentang Kami</a></li>
+                        <li><a href="#layanan">Layanan</a></li>
+                        <li><a href="#proyek">Proyek</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Layanan</h4>
+                    <ul>
+                        <li><a href="#">Mechanical Works</a></li>
+                        <li><a href="#">Electrical Works</a></li>
+                        <li><a href="#">General Trading</a></li>
+                        <li><a href="#">Supply Chain</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Ikuti Kami</h4>
+                    <div style="display: flex; gap: 15px; font-size: 1.2rem;">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 PT. Sumber Jaya Karya. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Minimalis untuk Interaksi -->
+    <script>
+        // Toggle Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            // Ubah icon dari bars ke times (X)
+            const icon = mobileMenuBtn.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.querySelector('i').classList.remove('fa-times');
+                mobileMenuBtn.querySelector('i').classList.add('fa-bars');
+            });
+        });
+
+        // Simulate Form Submission (Security & UX)
+        function handleFormSubmit(event) {
+            event.preventDefault(); // Mencegah reload halaman
+            
+            const btn = event.target.querySelector('button[type="submit"]');
+            const originalText = btn.innerText;
+            
+            // Ubah tombol untuk memberi feedback visual
+            btn.innerText = "Mengirim...";
+            btn.disabled = true;
+            btn.style.opacity = "0.7";
+
+            // Simulasi pengiriman data (2 detik)
+            setTimeout(() => {
+                alert("Terima kasih! Pesan Anda telah kami terima. Tim marketing kami akan segera menghubungi Anda.");
+                event.target.reset();
+                btn.innerText = originalText;
+                btn.disabled = false;
+                btn.style.opacity = "1";
+            }, 1500);
+        }
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = "0 4px 20px rgba(0,0,0,0.1)";
+            } else {
+                header.style.boxShadow = "0 2px 10px rgba(0,0,0,0.05)";
+            }
+        });
+    </script>
+</body>
+</html>
