@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PT. Sumber Jaya Karya</title>
+  <meta name="description" content="PT. Sumber Jaya Karya adalah perusahaan di bidang elektrikal, mekanikal, dan perdagangan umum." />
+  <link rel="icon" href="logo.png" />
+  <style>
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#222;line-height:1.6}
+    header{background:#0b2e4f;color:#fff;display:flex;align-items:center;justify-content:space-between;padding:18px 70px;position:sticky;top:0;z-index:10}
+    header img{height:55px}
+    nav a{color:#fff;text-decoration:none;margin-left:28px;font-weight:500}
+    nav a:hover{opacity:.8}
+
+    .hero{background:linear-gradient(rgba(11,46,79,.75),rgba(11,46,79,.75)),url('https://images.unsplash.com/photo-1581092919534-3a3c1d59d85e') center/cover no-repeat;height:90vh;display:flex;align-items:center}
+    .hero-content{padding:0 70px;color:#fff;max-width:800px}
+    .hero h1{font-size:46px;margin:0 0 15px}
+    .hero p{font-size:18px}
+    .btn{display:inline-block;margin-top:25px;background:#e63946;color:#fff;padding:14px 34px;text-decoration:none;font-weight:600;border-radius:4px}
+
+    section{padding:70px}
+    .section-title{text-align:center;margin-bottom:50px}
+    .section-title h2{color:#0b2e4f;font-size:32px;margin-bottom:10px}
+
+    .about{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+
+    .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:30px}
+    .card{border:1px solid #ddd;padding:30px;border-radius:6px;background:#fff}
+    .card h3{color:#0b2e4f;margin-bottom:10px}
+
+    .why{background:#f4f6f8}
+    .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:25px}
+    .why-box{background:#fff;padding:25px;border-left:5px solid #e63946}
+
+    footer{background:#0b2e4f;color:#fff;padding:40px 70px}
+    footer p{margin:6px 0}
+
+    @media(max-width:900px){
+      .about{grid-template-columns:1fr}
+      header,section,footer,.hero-content{padding:30px}
+      .hero h1{font-size:34px}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div style="display:flex;align-items:center;gap:15px">
+    <img src="logo.png" alt="Logo PT. Sumber Jaya Karya">
+  </div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <div class="hero-content">
+    <h1>Electrical, Mechanical & General Trading</h1>
+    <p>PT. Sumber Jaya Karya adalah perusahaan profesional yang bergerak di bidang elektrikal, mekanikal, dan perdagangan umum dengan komitmen pada mutu, keselamatan, dan ketepatan waktu.</p>
+    <a href="#contact" class="btn">Contact Us</a>
+  </div>
+</section>
+
+<section id="about">
+  <div class="section-title">
+    <h2>About Us</h2>
+    <p>Profil Singkat Perusahaan</p>
+  </div>
+  <div class="about">
+    <p>PT. Sumber Jaya Karya berfokus pada penyediaan jasa dan pengadaan di bidang <strong>Elektrikal</strong>, <strong>Mekanikal</strong>, serta <strong>Perdagangan Umum</strong>. Kami melayani kebutuhan industri, komersial, dan proyek infrastruktur dengan standar profesional dan berorientasi pada kepuasan klien.</p>
+    <p>Kami mengedepankan keselamatan kerja, kualitas hasil, dan kepatuhan terhadap standar teknis yang berlaku.</p>
+  </div>
+</section>
+
+<section id="services">
+  <div class="section-title">
+    <h2>Our Services</h2>
+  </div>
+  <div class="services">
+    <div class="card">
+      <h3>Electrical Works</h3>
+      <p>Pekerjaan instalasi listrik, panel distribusi, SUTM/SUTR, grounding, serta pemeliharaan sistem kelistrikan.</p>
+    </div>
+    <div class="card">
+      <h3>Mechanical Works</h3>
+      <p>Instalasi dan pemeliharaan sistem mekanikal, mesin industri, HVAC, dan peralatan pendukung.</p>
+    </div>
+    <div class="card">
+      <h3>General Trading</h3>
+      <p>Pengadaan material dan peralatan teknis untuk mendukung kebutuhan proyek dan operasional.</p>
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="section-title">
+    <h2>Why Choose Us</h2>
+  </div>
+  <div class="why-grid">
+    <div class="why-box">Tenaga Profesional & Berpengalaman</div>
+    <div class="why-box">Komitmen pada K3 & Mutu</div>
+    <div class="why-box">Tepat Waktu & Efisien</div>
+    <div class="why-box">Solusi Terintegrasi</div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-title">
+    <h2>Contact Us</h2>
+  </div>
+  <p><strong>PT. Sumber Jaya Karya</strong></p>
+  <p>Email: info@sumberjayakarya.co.id</p>
+  <p>Phone: 08xxxxxxxxxx</p>
+  <p>Address: (alamat perusahaan)</p>
+</section>
+
+<footer>
+  <p>© 2026 PT. Sumber Jaya Karya</p>
+</footer>
+
+</body>
+</html>
